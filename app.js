@@ -27,12 +27,12 @@ AMap.initAMapApiLoader({
 
 
 
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-default/index.css';
-Vue.use(ElementUI)
+// import ElementUI from 'element-ui';
+// import 'element-ui/lib/theme-default/index.css';
+// Vue.use(ElementUI)
 // 上面三行是全部引入ui的方式
 
-// elementui() //部分引入样式
+elementui() //部分引入样式
 
 
 

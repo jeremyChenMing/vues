@@ -23,17 +23,16 @@ config.plugins = (config.plugins || []).concat([
 
 var compiler = webpack(config);
 var server = new WebpackDevServer(compiler, {
-    hot: true,
+    hot: true,                                      //启用热替换
     historyApiFallback: true,
-    compress: true,
+    compress: true,                                 //一切服务都启动gzip压缩
     // publicPath: "/dist/",
-    stats: {
+    stats: {                                //精确控制bundle的信息展示  https://doc.webpack-china.org/configuration/stats/
         colors: true,
         chunks: false
     },
     open: true,
-    // clientLogLevel: "error",
-    noInfo: false
+    noInfo: false                    //启动时的一些bundle的信息隐藏掉，错误和警告仍然会展示的
 });
 
 server.listen(8080, 'localhost', function () {

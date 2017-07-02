@@ -30,11 +30,13 @@ var  webConfig = {
       //     vue$: 'vue/dist/vue.esm.js'
       // }
       alias: {  
-          'vue': 'vue/dist/vue.js'  
+        vue: 'vue/dist/vue.js',  //更改路径名称
+        // extensions: [".js", ".json"] //自动介休文件名称   这个是默认值
       }
   },
   performance: {
     hints: false
+    // hints: "error"  //生产环境建议配置这个，用来展示一条错误，通知你这个体积较大的资源，这个有助于防止把体积过大的bundle部署到生产环境
   },
   module: {
     // webpack 2.0 
@@ -62,17 +64,17 @@ var  webConfig = {
       {
         test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
         loader: 'file-loader',
-        query: {
+        options: {
           // name: '[name].[ext]?[hash]'
-          name: 'file/[name].[ext]'
+          name: 'file/[name].[ext]?[hash]'
         }
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
         loader: 'file-loader',
-        query: {
+        options: {
           // name: '[name].[ext]?[hash]'
-          name: 'file/[name].[ext]'
+          name: 'file/[name].[ext]?[hash]'
         }
       },
     ]
@@ -100,6 +102,7 @@ if (!IS_DEV) {
                               compress: {
                                   warnings: false,
                                   drop_console: true,
+                                  // minimize:true, //用来压缩loader的
                               }
                           })
                       ]);
