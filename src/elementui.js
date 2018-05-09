@@ -19,7 +19,7 @@ import {
 	Progress,
 	Card, 
 } from 'element-ui';
-import 'element-ui/lib/theme-default/index.css';
+// import 'element-ui/lib/theme-default/index.css';
 
 
 

@@ -26,9 +26,6 @@ var  webConfig = {
     publicPath:'/'
   },
   resolve: {
-      // alias: {
-      //     vue$: 'vue/dist/vue.esm.js'
-      // }
       alias: {  
         vue: 'vue/dist/vue.js',  //更改路径名称
         // extensions: [".js", ".json"] //自动介休文件名称   这个是默认值

@@ -9,7 +9,6 @@ import Learn from './components/learn.vue';
 // 定义一个异步加载的组件
 
 const SyncMaps = resolve => {
-	
 	require.ensure(['./components/map.vue'], () => {
 		resolve(require('./components/map.vue'))
 	})
